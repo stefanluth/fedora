@@ -60,7 +60,12 @@ echo "tab_bar_style powerline" >>~/.config/kitty/kitty.conf
 # Install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# TODO enable plugins
+
+# Edit .zshrc
+echo "alias \\$=''" >>~/.zshrc
+echo "eval '\$(thefuck --alias)'" >>~/.zshrc
+sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
+sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
 
 # Install VS Code extensions
 code --install-extension dracula-theme.theme-dracula
@@ -88,10 +93,6 @@ firefox bitwarden_password_manager-2023.2.1.xpi
 # Setup git/gh
 gh auth login
 # TODO change user.name and user.email
-
-# Add useful aliases
-echo "alias \$=''" >>~/.zshrc
-echo "eval '\$(thefuck --alias)'" >>~/.zshrc
 
 # Misc
 sudo usermod -a -G pkg-build stefan
