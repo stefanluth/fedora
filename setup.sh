@@ -35,12 +35,53 @@ sudo dnf install \
     zsh \
     -y
 
+# Install VS Code extensions
+code --install-extension christian-kohler.npm-intellisense
+code --install-extension christian-kohler.path-intellisense
+code --install-extension dracula-theme.theme-dracula
+code --install-extension esbenp.prettier-vscode
+code --install-extension formulahendry.auto-rename-tag
+code --install-extension GitHub.copilot
+code --install-extension ms-dotnettools.csharp
+code --install-extension ms-python.python
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.vscode-typescript-next
+code --install-extension oderwat.indent-rainbow
+code --install-extension ritwickdey.LiveServer
+code --install-extension rust-lang.rust-analyzer
+
+# Install Firefox extensions
+mkdir ~/.firefox
+cd ~/.firefox
+wget https://addons.mozilla.org/firefox/downloads/file/4073921/ublock_origin-1.47.2.xpi
+wget https://addons.mozilla.org/firefox/downloads/file/4071765/bitwarden_password_manager-2023.2.1.xpi
+firefox ublock_origin-1.47.2.xpi
+firefox bitwarden_password_manager-2023.2.1.xpi
+
 # Change shells
 chsh -s $(where zsh)
 sudo chsh -s $(where zsh)
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Edit .zshrc
+echo "alias \\\$=''" >>~/.zshrc
+echo "eval '\$(thefuck --alias)'" >>~/.zshrc
+sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
+sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
+
+# Setup git/gh
+gh auth login
+# TODO change user.name and user.email
+
+# Misc
+sudo usermod -a -G pkg-build $USER
+sudo usermod -aG docker $USER
 
 # Install and setup kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -57,44 +98,3 @@ echo "shell zsh" >>~/.config/kitty/kitty.conf
 echo "editor code" >>~/.config/kitty/kitty.conf
 echo "tab_bar_edge top" >>~/.config/kitty/kitty.conf
 echo "tab_bar_style powerline" >>~/.config/kitty/kitty.conf
-
-# Install zsh plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# Edit .zshrc
-echo "alias \\\$=''" >>~/.zshrc
-echo "eval '\$(thefuck --alias)'" >>~/.zshrc
-sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
-sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
-
-# Install VS Code extensions
-code --install-extension dracula-theme.theme-dracula
-code --install-extension GitHub.copilot
-code --install-extension christian-kohler.npm-intellisense
-code --install-extension christian-kohler.path-intellisense
-code --install-extension esbenp.prettier-vscode
-code --install-extension ms-python.python
-code --install-extension formulahendry.auto-rename-tag
-code --install-extension oderwat.indent-rainbow
-code --install-extension ms-dotnettools.csharp
-code --install-extension ms-vscode.vscode-typescript-next
-code --install-extension ms-vscode.cpptools
-code --install-extension ritwickdey.LiveServer
-code --install-extension rust-lang.rust-analyzer
-
-# Install Firefox extensions
-mkdir ~/.firefox
-cd ~/.firefox
-wget https://addons.mozilla.org/firefox/downloads/file/4073921/ublock_origin-1.47.2.xpi
-wget https://addons.mozilla.org/firefox/downloads/file/4071765/bitwarden_password_manager-2023.2.1.xpi
-firefox ublock_origin-1.47.2.xpi
-firefox bitwarden_password_manager-2023.2.1.xpi
-
-# Setup git/gh
-gh auth login
-# TODO change user.name and user.email
-
-# Misc
-sudo usermod -a -G pkg-build $USER
-sudo usermod -aG docker $USER
