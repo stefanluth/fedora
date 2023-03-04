@@ -22,6 +22,7 @@ sudo dnf install \
     firefox \
     gh \
     git \
+    gnome-tweaks \
     htop \
     lpf-spotify-client \
     nodejs \
@@ -62,7 +63,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Edit .zshrc
-echo "alias \\$=''" >>~/.zshrc
+echo "alias \\\$=''" >>~/.zshrc
 echo "eval '\$(thefuck --alias)'" >>~/.zshrc
 sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
@@ -95,4 +96,5 @@ gh auth login
 # TODO change user.name and user.email
 
 # Misc
-sudo usermod -a -G pkg-build stefan
+sudo usermod -a -G pkg-build $USER
+sudo usermod -aG docker $USER
