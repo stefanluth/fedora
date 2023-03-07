@@ -15,13 +15,17 @@ sudo dnf update -y
 sudo dnf upgrade -y
 sudo dnf install \
     cargo \
-    chsh \
     code \
     docker \
     dotnet \
     firefox \
     gh \
+    gimp \
     git \
+    gnome-extensions-app \
+    gnome-shell-extension-blur-my-shell.noarch \
+    gnome-shell-extension-just-perfection.noarch \
+    gnome-shell-extension-user-theme.noarch \
     gnome-tweaks \
     htop \
     lpf-spotify-client \
