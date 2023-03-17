@@ -42,6 +42,7 @@ sudo dnf install \
 # Install VS Code extensions
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension christian-kohler.path-intellisense
+code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dracula-theme.theme-dracula
 code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
@@ -51,6 +52,7 @@ code --install-extension ms-python.python
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension oderwat.indent-rainbow
+code --install-extension redhat.vscode-yaml
 code --install-extension ritwickdey.LiveServer
 code --install-extension rust-lang.rust-analyzer
 
@@ -86,6 +88,7 @@ gh auth login
 # Misc
 sudo usermod -a -G pkg-build $USER
 sudo usermod -aG docker $USER
+gsettings set org.gnome.desktop.input-sources show-all-sources true
 
 # Install and setup kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
