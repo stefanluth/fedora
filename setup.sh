@@ -35,6 +35,7 @@ sudo dnf install \
     rust \
     telegram-desktop \
     thefuck \
+    util-linux-user \
     vlc \
     zsh \
     -y
