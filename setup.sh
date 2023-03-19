@@ -66,7 +66,7 @@ echo "{
     \"security.workspace.trust.untrustedFiles\": \"open\",
     \"terminal.external.linuxExec\": \"zsh\",
     \"terminal.integrated.defaultProfile.linux\": \"zsh\"
-}" >>~/.config/Code/User/settings.json
+}" >> ~/.config/Code/User/settings.json
 
 # Install Firefox extensions
 mkdir ~/.firefox
@@ -90,8 +90,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Edit .zshrc
-echo "alias \\\$=''" >>~/.zshrc
-echo "eval \$(thefuck --alias)" >>~/.zshrc
+echo "alias \\\$=''" >> ~/.zshrc
+echo "eval \$(thefuck --alias)" >> ~/.zshrc
 sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
 
@@ -112,10 +112,10 @@ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applicatio
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-echo "shell zsh" >>~/.config/kitty/kitty.conf
-echo "editor code" >>~/.config/kitty/kitty.conf
-echo "tab_bar_edge top" >>~/.config/kitty/kitty.conf
-echo "tab_bar_style powerline" >>~/.config/kitty/kitty.conf
+echo "shell zsh" >> ~/.config/kitty/kitty.conf
+echo "editor code" >> ~/.config/kitty/kitty.conf
+echo "tab_bar_edge top" >> ~/.config/kitty/kitty.conf
+echo "tab_bar_style powerline" >> ~/.config/kitty/kitty.conf
 git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
 cd ~/.config/kitty
 ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
