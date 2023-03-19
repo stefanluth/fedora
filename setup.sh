@@ -131,6 +131,7 @@ echo "user_pref(\"extensions.formautofill.creditCards.enabled\", false);" >> pre
 echo "user_pref(\"signon.autofillForms\", false);" >> prefs.js
 echo "user_pref(\"signon.generation.enabled\", false);" >> prefs.js
 echo "user_pref(\"signon.management.page.breach-alerts.enabled\", false);" >> prefs.js
+echo "user_pref(\"signon.rememberSignons\", false);" >> prefs.js
 # Move cache to RAM
 echo "user_pref(\"browser.cache.disk.enable\", false);" >> prefs.js
 echo "user_pref(\"browser.cache.disk.parent_directory\", \"/run/user/$(id -u)/firefox\");" >> prefs.js
