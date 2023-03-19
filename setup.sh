@@ -79,9 +79,13 @@ echo "{
     \"editor.inlineSuggest.enabled\": true,
     \"editor.minimap.enabled\": false,
     \"editor.rulers\": [120],
+    \"python.formatting.blackArgs\": [\"-l 120\"],
+    \"python.formatting.blackPath\": \"~/.local/bin/black\",
+    \"python.formatting.provider\": \"black\"
     \"security.workspace.trust.untrustedFiles\": \"open\",
     \"terminal.external.linuxExec\": \"zsh\",
-    \"terminal.integrated.defaultProfile.linux\": \"zsh\"
+    \"terminal.integrated.defaultProfile.linux\": \"zsh\",
+    \"workbench.startupEditor\": \"none\",
 }" >> ~/.config/Code/User/settings.json
 
 # Install Firefox extensions
