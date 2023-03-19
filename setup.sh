@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get sudo
+sudo -v
+
 # Add RPM Fusion Repos
 sudo dnf install \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
@@ -57,6 +60,14 @@ code --install-extension redhat.vscode-yaml
 code --install-extension ritwickdey.LiveServer
 code --install-extension rust-lang.rust-analyzer
 
+# Add VS Code settings
+echo "{
+    \"editor.inlineSuggest.enabled\": true,
+    \"security.workspace.trust.untrustedFiles\": \"open\",
+    \"terminal.external.linuxExec\": \"zsh\",
+    \"terminal.integrated.defaultProfile.linux\": \"zsh\"
+}" >>~/.config/Code/User/settings.json
+
 # Install Firefox extensions
 mkdir ~/.firefox
 cd ~/.firefox
@@ -84,11 +95,6 @@ echo "eval \$(thefuck --alias)" >>~/.zshrc
 sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
 
-# Setup git/gh
-gh auth login
-# TODO change user.name and user.email
-
-
 # Misc
 sudo usermod -a -G pkg-build $USER
 sudo usermod -aG docker $USER
@@ -113,3 +119,11 @@ echo "tab_bar_style powerline" >>~/.config/kitty/kitty.conf
 git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
 cd ~/.config/kitty
 ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
+
+# Setup git/gh
+gh auth login
+read -p "Enter your GitHub user.email: " email 
+read -p "Enter your GitHub user.name: " name 
+git config --global user.email "$email"
+git config --global user.name "$name"
+git config --global core.editor "code --wait"
