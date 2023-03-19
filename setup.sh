@@ -62,7 +62,10 @@ code --install-extension rust-lang.rust-analyzer
 
 # Add VS Code settings
 echo "{
+    \"editor.formatOnSave\": true,
     \"editor.inlineSuggest.enabled\": true,
+    \"editor.minimap.enabled\": false,
+    \"editor.rulers\": [120],
     \"security.workspace.trust.untrustedFiles\": \"open\",
     \"terminal.external.linuxExec\": \"zsh\",
     \"terminal.integrated.defaultProfile.linux\": \"zsh\"
