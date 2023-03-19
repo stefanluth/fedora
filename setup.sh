@@ -62,8 +62,10 @@ mkdir ~/.firefox
 cd ~/.firefox
 wget https://addons.mozilla.org/firefox/downloads/file/4073921/ublock_origin-1.47.2.xpi
 wget https://addons.mozilla.org/firefox/downloads/file/4071765/bitwarden_password_manager-2023.2.1.xpi
+wget https://addons.mozilla.org/firefox/downloads/file/4047244/reddit_enhancement_suite-5.22.15.xpi
 firefox ublock_origin-1.47.2.xpi
 firefox bitwarden_password_manager-2023.2.1.xpi
+firefox reddit_enhancement_suite-5.22.15.xpi
 
 # Change shells
 chsh -s $(where zsh)
@@ -78,7 +80,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Edit .zshrc
 echo "alias \\\$=''" >>~/.zshrc
-echo "eval '\$(thefuck --alias)'" >>~/.zshrc
+echo "eval \$(thefuck --alias)" >>~/.zshrc
 sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
 
@@ -92,17 +94,16 @@ sudo usermod -aG docker $USER
 gsettings set org.gnome.desktop.input-sources show-all-sources true
 
 # Install and setup kitty terminal
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
 ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
 cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-kitty +kitten themes
-git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
-cd ~/.config/kitty
-ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
 echo "shell zsh" >>~/.config/kitty/kitty.conf
 echo "editor code" >>~/.config/kitty/kitty.conf
 echo "tab_bar_edge top" >>~/.config/kitty/kitty.conf
 echo "tab_bar_style powerline" >>~/.config/kitty/kitty.conf
+git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+cd ~/.config/kitty
+ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
