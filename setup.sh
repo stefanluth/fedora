@@ -175,6 +175,7 @@ echo "shell zsh" >> ~/.config/kitty/kitty.conf
 echo "editor code" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_edge top" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_style powerline" >> ~/.config/kitty/kitty.conf
+echo "linux_display_server x11" >> ~/.config/kitty/kitty.conf
 kitty +kitten themes
 
 # Setup git/gh
