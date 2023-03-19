@@ -112,6 +112,7 @@ echo "user_pref(\"browser.newtabpage.activity-stream.showSponsored\", false);" >
 echo "user_pref(\"browser.newtabpage.activity-stream.showSponsoredTopSites\", false);" >> prefs.js
 echo "user_pref(\"browser.search.hiddenOneOffs\", \"Google,Amazon.de,Bing,DuckDuckGo,Wikipedia (en)\");" >> prefs.js
 echo "user_pref(\"browser.topsites.blockedSponsors\", \"[\\\"amazon\\\",\\\"adidas\\\",\\\"nike\\\",\\\"trivago\\\"]\");" >> prefs.js
+echo "user_pref(\"extensions.pocket.enabled\", false);" >> prefs.js
 echo "user_pref(\"services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored\", false);" >> prefs.js
 echo "user_pref(\"services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites\", false);" >> prefs.js
 # Set homepage and pinned shortcuts
@@ -128,6 +129,7 @@ echo "user_pref(\"signon.management.page.breach-alerts.enabled\", false);" >> pr
 echo "user_pref(\"browser.cache.disk.enable\", false);" >> prefs.js
 echo "user_pref(\"browser.cache.disk.parent_directory\", \"/run/user/$(id -u)/firefox\");" >> prefs.js
 echo "user_pref(\"browser.cache.memory.enable\", true);" >> prefs.js
+echo "user_pref(\"browser.sessionstore.interval\", 60000);" >> prefs.js
 # Enable DRM content
 echo "user_pref(\"media.gmp-widevinecdm.abi\", \"x86_64-gcc3\");" >> prefs.js
 
