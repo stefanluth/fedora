@@ -52,6 +52,8 @@ sudo dnf install \
     util-linux-user \
     vlc \
     zsh \
+    --allowerasing \
+    --skip-broken \
     -y
 
 # Install VS Code extensions
@@ -138,7 +140,7 @@ chsh -s $(which zsh)
 sudo chsh -s $(which zsh)
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -171,9 +173,7 @@ echo "shell zsh" >> ~/.config/kitty/kitty.conf
 echo "editor code" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_edge top" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_style powerline" >> ~/.config/kitty/kitty.conf
-git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
-cd ~/.config/kitty
-ln -s ./kitty-themes/themes/Dracula.conf ~/.config/kitty/theme.conf
+kitty +kitten themes
 
 # Setup git/gh
 gh auth login
