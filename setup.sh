@@ -92,6 +92,7 @@ gh auth login
 sudo usermod -a -G pkg-build $USER
 sudo usermod -aG docker $USER
 gsettings set org.gnome.desktop.input-sources show-all-sources true
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:appmenu'
 
 # Install and setup kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
