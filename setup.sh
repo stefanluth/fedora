@@ -68,8 +68,8 @@ firefox bitwarden_password_manager-2023.2.1.xpi
 firefox reddit_enhancement_suite-5.22.15.xpi
 
 # Change shells
-chsh -s $(where zsh)
-sudo chsh -s $(where zsh)
+chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -87,6 +87,7 @@ sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highl
 # Setup git/gh
 gh auth login
 # TODO change user.name and user.email
+
 
 # Misc
 sudo usermod -a -G pkg-build $USER
