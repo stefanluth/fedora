@@ -151,6 +151,7 @@ echo "alias \\\$=''" >> ~/.zshrc
 echo "eval \$(thefuck --alias)" >> ~/.zshrc
 sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
+sed -i "s|# alias zshconfig=\"mate ~/.zshrc\"|alias zshconfig=\"code ~/.zshrc\"|g" ~/.zshrc
 
 # Misc
 mkdir ~/code
