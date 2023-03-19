@@ -153,6 +153,7 @@ sed -i "s|ZSH_THEME=\"robbyrussell\"|ZSH_THEME=\"agnoster\"|g" ~/.zshrc
 sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highlighting)|g" ~/.zshrc
 
 # Misc
+mkdir ~/code
 sudo usermod -a -G pkg-build $USER
 sudo usermod -aG docker $USER
 gsettings set org.gnome.desktop.input-sources show-all-sources true
