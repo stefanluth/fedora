@@ -25,6 +25,7 @@ sudo dnf install \
     cargo \
     code \
     containerd.io \
+    cronie \
     docker \
     docker-buildx-plugin \
     docker-ce \
@@ -179,3 +180,6 @@ read -p "Enter your GitHub user.name: " name
 git config --global user.email "$email"
 git config --global user.name "$name"
 git config --global core.editor "code --wait"
+
+# Update crontab
+echo "@reboot systemctl start docker" | crontab -
