@@ -71,6 +71,9 @@ sudo dnf install \
     --skip-broken \
     -y
 
+# Install pyenv
+curl https://pyenv.run | bash
+
 # Install VS Code extensions
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension christian-kohler.path-intellisense
