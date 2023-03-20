@@ -155,6 +155,7 @@ sed -i "s|plugins=(git)|plugins=(dnf git gh zsh-autosuggestions zsh-syntax-highl
 sed -i "s|# alias zshconfig=\"mate ~/.zshrc\"|alias zshconfig=\"code ~/.zshrc\"|g" ~/.zshrc
 
 # Misc
+/usr/bin/pip install black
 mkdir ~/code
 sudo usermod -a -G pkg-build $USER
 sudo usermod -aG docker $USER
