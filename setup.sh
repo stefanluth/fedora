@@ -224,8 +224,7 @@ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applicatio
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Dracula.conf
-curl -s "$THEME" > ~/.config/kitty/theme.conf
+curl -s "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Dracula.conf" > ~/.config/kitty/theme.conf
 
 # Setup git/gh
 echo "Setting up git/gh..."
