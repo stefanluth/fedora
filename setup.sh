@@ -22,6 +22,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf update -y
 sudo dnf upgrade -y
 sudo dnf install \
+    bzip2 \
+    bzip2-devel \
     cargo \
     code \
     containerd.io \
@@ -33,6 +35,8 @@ sudo dnf install \
     docker-compose-plugin \
     dotnet \
     firefox \
+    gcc \
+    gdbm-devel \
     gh \
     gimp \
     git \
@@ -42,15 +46,26 @@ sudo dnf install \
     gnome-shell-extension-user-theme.noarch \
     gnome-tweaks \
     htop \
+    libffi-devel \
+    libnsl2-devel \
+    libuuid-devel \
     lpf-spotify-client \
+    make \
     nodejs \
+    openssl-devel \
     pip \
     python \
+    readline-devel \
     rust \
+    sqlite \
+    sqlite-devel \
     telegram-desktop \
     thefuck \
+    tk-devel \
     util-linux-user \
     vlc \
+    xz-devel \
+    zlib-devel \
     zsh \
     --allowerasing \
     --skip-broken \
