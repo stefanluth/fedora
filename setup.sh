@@ -153,7 +153,7 @@ echo "user_pref(\"services.sync.prefs.sync.browser.newtabpage.activity-stream.sh
 echo "user_pref(\"services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites\", false);" >> prefs.js
 # Set homepage and pinned shortcuts
 echo "Setting homepage and pinned shortcuts..."
-echo "user_pref(\"browser.newtabpage.pinned\", \"[{\\\"url\\\":\\\"https://github.com\\\",\\\"label\\\":\\\"GitHub\\\"},{\\\"url\\\":\\\"https://youtube.com\\\",\\\"label\\\":\\\"YouTube\\\"},{\\\"url\\\":\\\"https://reddit.com\\\",\\\"label\\\":\\\"Reddit\\\"},{\\\"url\\\":\\\"https://outlook.live.com/owa/\\\",\\\"label\\\":\\\"Outlook\\\"}]\");" >> prefs.js
+echo "user_pref(\"browser.newtabpage.pinned\", \"[{\\\"url\\\":\\\"https://github.com\\\",\\\"label\\\":\\\"GitHub\\\"},{\\\"url\\\":\\\"https://youtube.com\\\",\\\"label\\\":\\\"YouTube\\\"},{\\\"url\\\":\\\"https://web.whatsapp.com\\\",\\\"label\\\":\\\"WhatsApp\\\"},{\\\"url\\\":\\\"https://reddit.com\\\",\\\"label\\\":\\\"Reddit\\\"},{\\\"url\\\":\\\"https://outlook.live.com/owa/\\\",\\\"label\\\":\\\"Outlook\\\"}]\");" >> prefs.js
 echo "user_pref(\"browser.startup.homepage\", \"about:home\");" >> prefs.js
 echo "user_pref(\"browser.startup.page\", 1);" >> prefs.js
 echo "user_pref(\"browser.toolbars.bookmarks.visibility\", \"never\");" >> prefs.js
@@ -228,12 +228,12 @@ curl -s "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Dr
 
 # Setup git/gh
 echo "Setting up git/gh..."
-gh auth login
 read -p "Enter your GitHub user.email: " email 
 read -p "Enter your GitHub user.name: " name 
 git config --global user.email "$email"
 git config --global user.name "$name"
 git config --global core.editor "code --wait"
+gh auth login
 
 # Change shells
 echo "Changing shells..."
