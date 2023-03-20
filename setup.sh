@@ -140,10 +140,6 @@ echo "user_pref(\"browser.sessionstore.interval\", 60000);" >> prefs.js
 # Enable DRM content
 echo "user_pref(\"media.gmp-widevinecdm.abi\", \"x86_64-gcc3\");" >> prefs.js
 
-# Change shells
-chsh -s $(which zsh)
-sudo chsh -s $(which zsh)
-
 # Install oh-my-zsh
 RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -171,16 +167,17 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Install and setup kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 echo "shell zsh" >> ~/.config/kitty/kitty.conf
 echo "editor code" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_edge top" >> ~/.config/kitty/kitty.conf
 echo "tab_bar_style powerline" >> ~/.config/kitty/kitty.conf
 echo "linux_display_server x11" >> ~/.config/kitty/kitty.conf
+mkdir /home/stefan/.local/bin/
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 kitty +kitten themes
 
 # Setup git/gh
@@ -190,6 +187,10 @@ read -p "Enter your GitHub user.name: " name
 git config --global user.email "$email"
 git config --global user.name "$name"
 git config --global core.editor "code --wait"
+
+# Change shells
+chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 # Update crontab
 echo "@reboot systemctl start docker" | crontab -
