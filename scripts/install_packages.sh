@@ -6,6 +6,7 @@ PACKAGES=(
     cronie
     dotnet
     firefox
+    fzf
     gcc
     gh
     gimp
@@ -25,6 +26,7 @@ PACKAGES=(
     thefuck
     util-linux-user
     vlc
+    xclip
     zsh
 )
 
@@ -41,3 +43,6 @@ echo "Installing packages..."
 sudo dnf update -y
 sudo dnf upgrade -y
 sudo dnf install ${PACKAGES[@]} --allowerasing --skip-broken -y
+
+echo "Adding user to pkg-build group..."
+sudo usermod -a -G pkg-build $USER
