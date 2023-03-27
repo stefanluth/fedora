@@ -52,3 +52,9 @@ echo "user_pref(\"media.gmp-widevinecdm.abi\", \"x86_64-gcc3\");" >> prefs.js
 
 echo "Disabling Picture in Picture"
 echo "user_pref(\"media.videocontrols.picture-in-picture.enabled\", false);" >> prefs.js
+
+echo "Disable search suggestions"
+echo "user_pref(\"browser.search.suggest.enabled\", false);" >> prefs.js
+
+echo "Enable Do Not Track"
+echo "user_pref(\"privacy.donottrackheader.enabled\", true);" >> prefs.js
