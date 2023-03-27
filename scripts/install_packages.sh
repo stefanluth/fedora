@@ -24,6 +24,9 @@ PACKAGES=(
     sqlite-devel
     telegram-desktop
     thefuck
+    transmission
+    transmission-cli
+    transmission-gtk
     util-linux-user
     vlc
     xclip
