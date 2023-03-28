@@ -19,6 +19,7 @@ SCRIPTS=(
     install_packages.sh
     install_vscode.sh
     install_docker.sh
+    install_rust.sh
     install_pyenv.sh
     install_ohmyzsh.sh
     install_alacritty.sh
