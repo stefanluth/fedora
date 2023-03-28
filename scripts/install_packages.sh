@@ -15,6 +15,7 @@ PACKAGES=(
     lpf-spotify-client
     make
     nodejs
+    nvim
     openssl-devel
     pip
     python
@@ -24,6 +25,7 @@ PACKAGES=(
     sqlite-devel
     telegram-desktop
     thefuck
+    tmux
     transmission
     transmission-cli
     transmission-gtk
