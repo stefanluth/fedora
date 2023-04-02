@@ -27,12 +27,14 @@ SCRIPTS=(
     install_vscode_extensions.sh
     install_gnome_extensions.sh
     install_zsh_plugins.sh
+    install_teamspeak.sh
     setup_firefox.sh
     setup_vscode.sh
     setup_docker.sh
     setup_gnome.sh
     setup_zsh.sh
     setup_git.sh
+    setup_teamspeak.sh
     setup_shells.sh
 )
 
