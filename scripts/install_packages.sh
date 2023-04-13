@@ -12,6 +12,7 @@ PACKAGES=(
     gimp
     git
     htop
+    kernel-devel
     lpf-spotify-client
     make
     nodejs
