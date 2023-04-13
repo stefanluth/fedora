@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 DOWNLOAD_PAGE="https://www.teamspeak.com/en/downloads/#client"
 CLIENT_DOWNLOAD_URL=$( curl -s $DOWNLOAD_PAGE | grep -oP 'https://files.teamspeak-services.com/releases/client/.*?/TeamSpeak3-Client-linux_amd64-.*?\.run' | head -n 1 )
 echo "Downloading TeamSpeak3 from $CLIENT_DOWNLOAD_URL"

@@ -32,9 +32,9 @@ SCRIPTS=(
     setup_vscode.sh
     setup_docker.sh
     setup_gnome.sh
+    setup_teamspeak.sh
     setup_zsh.sh
     setup_git.sh
-    setup_teamspeak.sh
     setup_shells.sh
 )
 
