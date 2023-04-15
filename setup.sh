@@ -21,6 +21,7 @@ SCRIPTS=(
     install_docker.sh
     install_rust.sh
     install_pyenv.sh
+    install_tldr.sh
     install_ohmyzsh.sh
     install_alacritty.sh
     install_firefox_extensions.sh
