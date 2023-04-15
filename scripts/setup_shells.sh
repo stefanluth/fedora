@@ -3,6 +3,7 @@
 if ! command -v zsh &> /dev/null
 then
     echo "zsh could not be found"
+    echo "skipping zsh setup"
     exit
 fi
 

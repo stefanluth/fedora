@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if ! command -v code &> /dev/null; then
+    echo "vscode could not be found"
+    echo "skipping vscode setup"
+    exit 0
+fi
+
 source $HOME/.bashrc
 
 # check if DOTFILES_REPO_ROOT is set

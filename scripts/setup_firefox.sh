@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if ! command -v firefox &> /dev/null
+then
+    echo "Firefox could not be found"
+    echo "skipping Firefox setup"
+    exit
+fi
+
 echo "Deleting default Fedora Firefox profile..."
 sudo rm -f /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
 

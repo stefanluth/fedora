@@ -3,6 +3,7 @@
 if ! command -v firefox &> /dev/null
 then
     echo "firefox could not be found"
+    echo "skipping firefox extensions installation"
     exit
 fi
 

@@ -1,5 +1,11 @@
 !/bin/bash
 
+if command -v pyenv &> /dev/null
+then
+    echo "pyenv is already installed"
+    exit
+fi
+
 echo "Installing Python build dependencies..."
 sudo dnf install \
     bzip2 \

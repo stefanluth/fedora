@@ -3,6 +3,7 @@
 if ! command -v tmux &> /dev/null
 then
     echo "tmux could not be found"
+    echo "skipping tmux setup"
     exit
 fi
 

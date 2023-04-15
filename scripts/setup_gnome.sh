@@ -1,5 +1,19 @@
 #!/bin/bash
 
+if ! command -v gsettings &> /dev/null
+then
+    echo "gsettings could not be found"
+    echo "skipping GNOME setup"
+    exit
+fi
+
+if ! command -v gnome-extensions &> /dev/null
+then
+    echo "gnome-extensions could not be found"
+    echo "skipping GNOME setup"
+    exit
+fi
+
 echo "Enabling all keyboard layouts and moving appmenu to the left..."
 gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:appmenu'

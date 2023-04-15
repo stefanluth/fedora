@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if command -v docker &> /dev/null
+then
+    echo "Docker is already installed"
+    exit
+fi
+
 echo "Adding Docker repo..."
 sudo dnf config-manager \
     --add-repo \

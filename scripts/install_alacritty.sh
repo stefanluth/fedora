@@ -1,3 +1,18 @@
+#!/bin/bash
+
+if ! command -v cargo &> /dev/null
+then
+    echo "cargo could not be found"
+    echo "skipping alacritty installation"
+    exit
+fi
+
+if command -v alacritty &> /dev/null
+then
+    echo "alacritty is already installed"
+    exit
+fi
+
 PACKAGES=(
     cmake
     freetype-devel

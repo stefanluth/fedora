@@ -3,7 +3,8 @@
 source $HOME/.bashrc
 
 if ! command -v alacritty &> /dev/null; then
-    echo "Alacritty is not installed. Please install it first."
+    echo "Alacritty could not be found"
+    echo "Skipping Alacritty setup"
     exit 1
 fi
 

@@ -3,12 +3,14 @@
 if ! command -v git &> /dev/null
 then
     echo "git could not be found"
+    echo "skipping git setup"
     exit
 fi
 
 if ! command -v gh &> /dev/null
 then
     echo "gh could not be found"
+    echo "skipping GitHub CLI setup"
     exit
 fi
 
