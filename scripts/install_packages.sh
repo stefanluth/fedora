@@ -36,9 +36,6 @@ PACKAGES=(
     zsh
 )
 
-# Get sudo
-sudo -v
-
 echo "Adding RPM Fusion repos..."
 sudo dnf install \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
