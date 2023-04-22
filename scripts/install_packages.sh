@@ -5,6 +5,7 @@ PACKAGES=(
     code
     cronie
     dotnet
+    ffmpeg
     firefox
     fzf
     gcc
@@ -13,11 +14,14 @@ PACKAGES=(
     git
     htop
     kernel-devel
+    lame
+    lame-libs
     lpf-spotify-client
     make
     nodejs
     nvim
     openssl-devel
+    openvpn
     pip
     python
     readline-devel
@@ -32,6 +36,7 @@ PACKAGES=(
     transmission-gtk
     util-linux-user
     vlc
+    wireshark
     xclip
     zsh
 )
