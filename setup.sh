@@ -16,6 +16,7 @@ source $HOME/.bashrc
 mkdir -p $HOME/code
 
 SCRIPTS=(
+    setup_dnf.sh
     install_packages.sh
     install_vscode.sh
     install_docker.sh
@@ -29,6 +30,7 @@ SCRIPTS=(
     install_gnome_extensions.sh
     install_zsh_plugins.sh
     install_teamspeak.sh
+    install_discord.sh
     setup_firefox.sh
     setup_vscode.sh
     setup_docker.sh
@@ -36,6 +38,7 @@ SCRIPTS=(
     setup_teamspeak.sh
     setup_zsh.sh
     setup_git.sh
+    setup_firmware.sh
     setup_shells.sh
 )
 
