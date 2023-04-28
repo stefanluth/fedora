@@ -1,7 +1,6 @@
 #!/bin/bash
 
 PACKAGES=(
-    cargo
     code
     cronie
     dotnet
@@ -25,7 +24,6 @@ PACKAGES=(
     pip
     python
     readline-devel
-    rust
     sqlite
     sqlite-devel
     telegram-desktop
