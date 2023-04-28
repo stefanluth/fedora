@@ -15,4 +15,4 @@ if [ -z "$DOTFILES_REPO_ROOT" ]; then
 fi
 
 echo "Copying tmux.conf..."
-curl -s "$DOTFILES_REPO_ROOT/dotfiles/tmux/tmux.conf" > $HOME/.tmux.conf
+curl -s "$DOTFILES_REPO_ROOT/dotfiles/tmux/.tmux.conf" > $HOME/.tmux.conf
