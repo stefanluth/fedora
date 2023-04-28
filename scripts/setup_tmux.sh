@@ -14,5 +14,8 @@ if [ -z "$DOTFILES_REPO_ROOT" ]; then
     exit 1
 fi
 
+echo "Getting tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "Copying tmux.conf..."
 curl -s "$DOTFILES_REPO_ROOT/dotfiles/tmux/.tmux.conf" > $HOME/.tmux.conf
