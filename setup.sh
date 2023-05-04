@@ -9,7 +9,7 @@ fi
 
 if [ -z "$DOTFILES_REPO_ROOT" ]; then
     echo "Setting DOTFILES_REPO_ROOT in .bashrc..."
-    echo 'export DOTFILES_REPO_ROOT="https://raw.githubusercontent.com/stefanluth/fedora_setup/main"' >> $HOME/.bashrc
+    echo 'export DOTFILES_REPO_ROOT="https://raw.githubusercontent.com/stefanluth/fedora/main"' >> $HOME/.bashrc
 fi
 
 source $HOME/.bashrc
