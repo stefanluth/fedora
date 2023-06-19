@@ -35,3 +35,6 @@ function gh-ssh() {
     fi
 
 }
+
+alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
+alias dcdu="docker-compose down && docker-compose up"
