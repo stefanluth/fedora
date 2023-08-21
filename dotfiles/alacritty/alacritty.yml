@@ -1,0 +1,8 @@
+import:
+  - ~/.config/alacritty/dracula.yml
+
+window:
+  opacity: 0.94
+
+scrolling:
+  history: 100000

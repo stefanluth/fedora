@@ -30,4 +30,5 @@ if [ -z "$DOTFILES_REPO_ROOT" ]; then
 fi
 
 echo "Copying .alacritty.toml..."
-curl -s $DOTFILES_REPO_ROOT/dotfiles/alacritty/.alacritty.toml > $HOME/.alacritty.toml
+curl -s $DOTFILES_REPO_ROOT/dotfiles/alacritty/dracula.yml > $HOME/.config/alacritty/dracula.yml
+curl -s $DOTFILES_REPO_ROOT/dotfiles/alacritty/alacritty.yml > $HOME/.config/alacritty/alacritty.yml
