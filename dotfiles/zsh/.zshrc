@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+ZSH_THEME="muse"
 
 plugins=(
     dnf
@@ -11,9 +11,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias zshconfig="code $HOME/.zshrc"
 alias \$=''
-eval $(thefuck --alias)
+alias zshconfig="code $HOME/.zshrc"
+alias ls='ls -lah --color=auto'
+alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
+alias dcdu="docker-compose down && docker-compose up"
 
 # Functions
 
@@ -33,8 +35,6 @@ function gh-ssh() {
     else
         echo $GH_URL
     fi
-
 }
 
-alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
-alias dcdu="docker-compose down && docker-compose up"
+eval $(thefuck --alias)
