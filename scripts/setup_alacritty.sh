@@ -23,7 +23,6 @@ mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 
-# check if DOTFILES_REPO_ROOT is set
 if [ -z "$DOTFILES_REPO_ROOT" ]; then
     echo "DOTFILES_REPO_ROOT is not set. Please set it in your .bashrc."
     exit 1
