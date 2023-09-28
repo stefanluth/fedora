@@ -17,6 +17,7 @@ alias zshconfig="code $HOME/.zshrc"
 alias ls='ls -lah --color=auto'
 alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
 alias dcdu="docker-compose down && docker-compose up"
+alias untar='tar -xvf'
 
 # Functions
 
