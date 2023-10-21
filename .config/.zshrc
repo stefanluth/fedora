@@ -10,12 +10,21 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-eval $(thefuck --alias)
-alias \$=''
 alias zshconfig="code $HOME/.zshrc"
+eval $(thefuck --alias)
+
+# General
+alias \$=''
 alias ls='ls -lah --color=auto'
-alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
-alias dcdu="docker-compose down && docker-compose up"
 alias untar='tar -xvf'
+
+# Git
 alias openconflicts='git status --porcelain | grep '^UU' | cut -c 4- | xargs code'
+
+# Docker
+alias dcdu="docker-compose down && docker-compose up"
+alias dcdbu="docker-compose down && docker-compose build && docker-compose up"
+
+# Tmux
+alias ta="tmux attach"
+alias tns="tmux new-session -s"
