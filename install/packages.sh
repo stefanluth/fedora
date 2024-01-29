@@ -62,5 +62,8 @@ sudo dnf install ${PACKAGES[@]} --allowerasing --skip-broken -y
 echo "Adding user to pkg-build group..."
 sudo usermod -a -G pkg-build $USER
 
-echo "Installing rust.."
+echo "Installing rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo "Getting tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
