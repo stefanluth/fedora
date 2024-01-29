@@ -46,13 +46,7 @@ user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 
 // Setting homepage and pinned shortcuts
-user_pref("browser.newtabpage.pinned", [
-  { url: "https://github.com", label: "GitHub" },
-  { url: "https://youtube.com", label: "YouTube" },
-  { url: "https://web.whatsapp.com", label: "WhatsApp" },
-  { url: "https://reddit.com", label: "Reddit" },
-  { url: "https://outlook.live.com/owa/", label: "Outlook" },
-]);
+user_pref("browser.newtabpage.pinned", [{"url":"https://github.com","label":"GitHub"},{"url":"https://youtube.com","label":"YouTube"},{"url":"https://web.whatsapp.com","label":"WhatsApp"},{"url":"https://reddit.com","label":"Reddit"},{"url":"https://outlook.live.com/owa/","label":"Outlook"}]);
 user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.startup.page", 1);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
