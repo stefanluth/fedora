@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if
-    ! command -v code &
-    >/dev/null
-then
+if ! command -v code &>/dev/null; then
     echo "code could not be found"
     echo "skipping vscode extensions installation"
     exit
