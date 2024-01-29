@@ -1,0 +1,7 @@
+import = ["/home/stefan/.config/alacritty/dracula.toml"]
+
+[scrolling]
+history = 100000
+
+[window]
+opacity = 0.94
