@@ -1,15 +1,24 @@
 #!/bin/bash
 
-CONFIG_DIR=$HOME/.config
-
-mkdir -p $CONFIG_DIR/Code/User/
-cd $CONFIG_DIR
+cd $HOME
 git clone https://github.com/stefanluth/dotfiles
-cd dotfiles/.config
+cd dotfiles
 
-cp -r alacritty $CONFIG_DIR
-cp .prettierrc.json $CONFIG_DIR
-cp vscode/settings.json $CONFIG_DIR/Code/User/settings.json
-cp .zshrc $HOME/.zshrc
-cp .tmux.conf $HOME/.tmux.conf
-cp .mozilla/user.js $HOME/.mozilla/firefox/*.default-release
+bash install/packages.sh
+bash install/alacritty.sh
+bash install/vscode.sh
+bash install/fonts.sh
+
+bash install/extensions/firefox.sh
+bash install/extensions/vscode.sh
+bash install/extensions/gnome.sh
+bash install/extensions/zsh.sh
+
+bash scripts/git.sh
+
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+mkdir -p $HOME/.config/Code/User/
+
+cp -r dotfiles/* $HOME/
+mv $HOME/.mozilla/firefox/user.js $HOME/.mozilla/firefox/*.default-release

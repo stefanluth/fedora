@@ -6,11 +6,11 @@ HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 
 plugins=(
-    dnf
-    git
-    gh
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+  dnf
+  git
+  gh
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -56,7 +56,7 @@ git_squash() {
 
   # Perform the soft reset and commit with the provided message
   git reset --soft HEAD~"$commit_count" &&
-  git commit -m "$commit_message"
+    git commit -m "$commit_message"
 }
 
 # Docker
@@ -79,11 +79,14 @@ alias td="tmux detach"
 alias tr="tmux source-file ~/.tmux.conf && tmux attach" # for reloading sessions with tmux-resurrect
 alias tns="tmux new-session -s"
 
+# Python
+alias venv="python3 -m venv .venv && source .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt"
+
 # Utility functions
 
 # Run command in background, without output
 b() {
-  nohup "$@" > /dev/null 2>&1 &
+  nohup "$@" >/dev/null 2>&1 &
   disown
 }
 
