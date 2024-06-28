@@ -20,5 +20,5 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 mkdir -p $HOME/.config/Code/User/
 
-cp -r dotfiles/* $HOME/
-mv $HOME/.mozilla/firefox/user.js $HOME/.mozilla/firefox/*.default-release
+cp -a dotfiles/. $HOME
+mv dotfiles/.mozilla/firefox/user.js $HOME/.mozilla/firefox/*.default-release
