@@ -19,6 +19,8 @@ bash $HOME/dotfiles/install/extensions/vscode.sh
 bash $HOME/dotfiles/install/extensions/gnome.sh
 bash $HOME/dotfiles/install/extensions/zsh.sh
 
+gsettings set org.gnome.desktop.input-sources show-all-sources true
+
 bash $HOME/dotfiles/scripts/git.sh
 
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
