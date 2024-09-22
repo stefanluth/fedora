@@ -21,7 +21,6 @@ PACKAGES=(
     lame-libs
     libffi-devel
     libuuid-devel
-    lpf-spotify-client
     make
     nodejs
     nvim
