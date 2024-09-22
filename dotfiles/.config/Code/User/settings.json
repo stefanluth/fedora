@@ -21,9 +21,9 @@
   "telemetry.telemetryLevel": "off",
   "terminal.external.linuxExec": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.startupEditor": "none"
 }
