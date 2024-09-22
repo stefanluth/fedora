@@ -5,8 +5,6 @@ git clone https://github.com/stefanluth/dotfiles $HOME/dotfiles
 echo "Installing packages..."
 bash $HOME/dotfiles/install/packages.sh
 
-zsh
-
 echo "Installing alacritty..."
 bash $HOME/dotfiles/install/alacritty.sh
 echo "Installing docker..."
@@ -28,4 +26,7 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 mkdir -p $HOME/.config/Code/User/
 
 cp -a $HOME/dotfiles/dotfiles/. $HOME
-mv $HOME/dotfiles/dotfiles/.mozilla/firefox/user.js $HOME/.mozilla/firefox/*.default-release
+cp -a $HOME/dotfiles/dotfiles/.mozilla/firefox/user.js $HOME/.mozilla/firefox/*.default-release
+
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
