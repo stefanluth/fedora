@@ -7,7 +7,7 @@ history = 100000
 opacity = 0.94
 dynamic_padding = true
 decorations = "none"
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 
 [font]
 size = 12.0
